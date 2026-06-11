@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 
 export const useTimer = (isActive: boolean) => {
   const [time, setTime] = useState(0);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     if (isActive) {
